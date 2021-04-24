@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+  <html lang="ru">
+     <head>
+      <meta charset="utf-8">
+      <title>Nerds</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="normalize.css">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 15000,
+      values: [ 0, 10000 ],
+      slide: function( event, ui ) {
+        $( "#price" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+    $( "#price" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+  } );
+  </script>
+     </head>
+     <body>
+         <header class="main-header"> 
+            <div class="container"> 
+                <nav class="main-navigation">
+                    <a class="main-header-logo" href="./index.html">
+                        <img src="./img/nerds-logo.svg" alt="Студия дизайна Nerds">
+                    </a>
+                    <ul class="main-menu">
+                        <li> <a href="#">Студия </a> </li>
+                        <li> <a href="#"> Клиенты </a> </li>
+                        <li> <a > Магазин </a> </li>
+                        <li> <a href="#"> Контакты </a> </li>
+                    </ul>
+                    <ul class="cart">  
+                        <li><a href="#">Корзина</a> </li>
+                        </ul>
+                </nav>
+            </div>
+         </header>
+         <main>
+            <div class="shop">   
+                <div class="container">
+                    <h2 class="title name-shop"> Магазин готовых шаблонов </h2>
+                </div>
+            </div>
+            <div class="container">  
+                 <div class="main-content">
+                    <form class="filters" action="/">
+                        <fieldset class="price">
+                                    <label class="cost" for="price">Стоимость:</label>
+                                  <div class="range"><div id="slider-range"></div></div>
+                            <label class="price-from" for="price-from" name="price-from" >От</label>
+                                <input class="price-from-input" type="text" name="price-from" id="price-from" placeholder="0">
+                            <label  class="price-to" for="price-to" name="price-to">До</label>
+                                <input class="price-to-input" type="text" name="price-to" id="price-to" placeholder="15 000">
+                        </fieldset>
+                        <fieldset class="grid">
+                            <legend class="grid-filter">Сетка:</legend>
+                            <div>
+                                <input class="checkbox-circle" name="grids" id="adaptive" type="radio">
+                                <label for="adaptive">Адаптивная</label>
+                            </div>
+                            <div>
+                                <input class="checkbox-circle" name="grids" id="fixed" type="radio">
+                                <label for="fixed">Фиксированая</label>
+                            </div>
+                            <div>
+                                <input class="checkbox-circle" name="grids" id="responsiv" type="radio">
+                                <label for="responsiv">Резиновая</label>
+                            </div>
+                        </fieldset>
+                        <fieldset class="grid">
+                            <legend class="grid-specific">Особенности:</legend>
+                                <div>
+                                    <input class="checkbox-square" id="slider" type="checkbox">
+                                    <label for="slider">Слайдер</label>
+                                </div>
+                                <div>
+                                    <input class="checkbox-square" id="features" type="checkbox">
+                                    <label for="features">Блок преимуществ</label>
+                                </div>
+                                <div>
+                                    <input class="checkbox-square" id="news" type="checkbox">
+                                    <label for="news">Новости</label>
+                                </div>
+                                <div>
+                                    <input class="checkbox-square" id="galery" type="checkbox">
+                                    <label for="galery">Галерея</label>
+                                </div>
+                                <div>
+                                    <input class="checkbox-square" id="cart" type="checkbox">
+                                    <label for="cart">Корзина</label>
+                                </div>
+                        </fieldset>
+                        <button class="button-show">Показать</button>
+                    </form>
+                    <section class="catalog-page">
+                        <div class="sort"> 
+                            <h2 class="sort-filters"> Сортировать:</h2>
+                            <a href="/">По цене</a>
+                            <a href="/">По типу</a>
+                            <a href="/">По названию</a>
+                            <a class="sort-arrow" href="/"></a>
+                            <a class="sort-arrow" href="/"></a>
+                        </div>
+                        <section class="catalog">
+                            <ul class="site">
+                                <li> 
+                                    <div class="switchs"><button ></button>
+                                        <button></button>
+                                        <button></button>
+                                    </div>
+                                    <img src="./img/img-sedona.jpg" alt="Sedona">
+                                    <div class="details"> 
+                                        <h2> Sedona</h2>
+                                        <p>Информационный сайт 
+                                            для туристов</p>
+                                        <a href="/">9900 руб.</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="switchs"><button></button>
+                                        <button></button>
+                                        <button></button>
+                                    </div>
+                                    <img src="./img/img-pink.jpg" alt="Pink">
+                                    <div class="details"> 
+                                        <h2>Pink App</h2>
+                                        <p>Продуктовый лендинг
+                                            приложения для iOS и Android</p>
+                                        <a href="/">9900 руб.</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="switchs"><button></button>
+                                        <button></button>
+                                        <button></button>
+                                    </div>
+                                    <img src="./img/img-barbershop.jpg" alt="Барбершоп">
+                                    <div class="details"> 
+                                        <h2>Barbershop "Borodinski"</h2>
+                                        <p>Продуктовый лендинг
+                                            приложения для iOS и Android</p>
+                                        <a href="/">9900 руб.</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="switchs"><button></button>
+                                        <button></button>
+                                        <button></button></div>
+                                    <img src="./img/img-mishka.jpg" alt="Mishka">
+                                    <div class="details"> 
+                                        <h2>Mishka</h2>
+                                        <p>Информационный сайт 
+                                            для туристов</p>
+                                        <a href="/">9900 руб.</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="switchs"><button></button>
+                                        <button></button>
+                                        <button></button></div>
+                                    <img src="./img/img-aplus.jpg" alt="Aplus">
+                                    <div class="details"> 
+                                        <h2>Aplus</h2>
+                                        <p>Продуктовый лендинг
+                                            приложения для iOS и Android</p>
+                                        <a href="/">9900 руб.</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="switchs"><button></button>
+                                        <button></button>
+                                        <button></button>
+                                    </div>
+                                    <img src="./img/img-kvast.jpg" alt="Kvast">
+                                    <div class="details"> 
+                                        <h2>Kvast</h2>
+                                        <p>Информационный сайт 
+                                            для туристов</p>
+                                        <a href="/">9900 руб.</a>
+                                    </div>
+                                </li> 
+                            </ul>
+                        </section>
+                        <div class="pages">
+                            <a class="button-show page" href="/">1</a>
+                            <a class="button-show page" href="/">2</a>
+                            <a class="button-show page" href="/">3</a>
+                            <a class="button-show next page" href="/">Следущая</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <footer >
+            <div class="maps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533277!2d30.320858716096975!3d59.93871648187614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRltGPLCAxOTExODY!5e0!3m2!1suk!2sua!4v1587649017818!5m2!1suk!2sua" width="1525" height="420" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <div class="container">
+                    <div class="contacts-write">
+                        <h3>NЁRDS DESIGN STUDIO</h3>
+                        <p>191186, Санкт-Петербург, <br>  
+                        ул. Б. Конюшенная, д. 19/8 </p>
+                        <p>тел. +7 (812) 275-75-75</p>
+                        <button class="write-us-button">Напишите нам</button>
+                    </div>
+                </div>
+            </div>    
+            <div class="container">
+                <div class="social-media">
+                    <div class="social">
+                            <a href="#">
+                                <img src="./img/vk-icon.png" alt="Вконтакте">
+                            </a>
+                            <a href="#">
+                                <img src="./img/fb-icon.png" alt="Facebook">
+                            </a>
+                            <a href="#">
+                                <img src="./img/insta-icon.png" alt="Instagram">
+                            </a>
+                    </div> 
+                    <div>
+                        <p class="friend">Давайте дружить, это выгодно!</p>
+                        <p class="sale">Скидка 10% для друзей из социальных сетей.</p> 
+                    </div>  
+                </div>     
+            </div>
+        </footer>
+        <div class="write-us">
+            <button class="close-cross"></button>
+            <h2>Напишите нам</h2>
+            <form action="/" method="post" name="write-us"> 
+            <div class="input1">
+                <label class="name" for="name">Ваше имя:</label>
+                <input class="your-name error" type="text" name="name" id="name" placeholder="Имя Фамилия">
+            </div>
+            <div class="input1">
+                <label class="e-mail" for="e-mail"> Ваш e-mail:</label>
+                <input class="mail error" type="text" name="e-mail" id="e-mail" placeholder="email@example.com">
+            </div>
+            <div class="input1 text-input">
+                <label class="mail-text" for="text">Текст письма:</label>
+                <textarea class="text error" name="text" id="text" placeholder="В свободной форме"></textarea>
+            </div>
+            <div class="button-send">
+                <button class="send" type="submit">Отправить</button> 
+            </div>
+            </form>
+        </div>
+        <script src="./popup.js"></script>
+     </body>
+</html>
